@@ -17,7 +17,7 @@ jobs:
       - name: Docker login
         uses: docker/login-action@v3
         with:
-          username: bmasoti
+          username: bruno.camd@hotmail.com
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Constrói e envia imagem docker
