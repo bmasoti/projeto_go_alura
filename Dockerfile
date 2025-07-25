@@ -9,7 +9,6 @@ COPY ./routes/ /app/routes/
 COPY ./main.go /app/main.go
 COPY ./go.mod /app/go.mod
 COPY ./go.sum /app/go.sum
-
 RUN go build main.go
 
 FROM alpine:latest AS production
@@ -29,5 +28,6 @@ COPY ./assets/ /app/assets/
 COPY ./templates/ /app/templates/
 
 COPY --from=build /app/main /app/main
+
 
 CMD [ "./main" ]
